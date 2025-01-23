@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.1.4
+
+### Fixed
+
+- Set unlimited `untilBuild`
+
 ## 0.1.3
 
 ### Fixed
