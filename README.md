@@ -8,6 +8,8 @@ Plugin for the JetBrains editor family (IntelliJ IDEA, Android Studio, etc.)</br
 AI-powered unit test generator for Kotlin code.
 <!-- Plugin description end -->
 
+![preview.jpg](images/preview.jpg)
+
 ## Features
 
 ✅ Generate unit tests by AI</br>
