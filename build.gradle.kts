@@ -1,6 +1,5 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
@@ -34,11 +33,11 @@ dependencies {
     testImplementation(libs.junit)
 
     intellijPlatform {
-        androidStudio(version = "2024.2.1.12", useInstaller = true)
-
+        create(
+            providers.gradleProperty("platformType"),
+            providers.gradleProperty("platformVersion")
+        )
         bundledPlugin("org.jetbrains.kotlin")
-
-        instrumentationTools()
         pluginVerifier()
         testFramework(TestFrameworkType.Platform)
     }
@@ -81,20 +80,9 @@ intellijPlatform {
         }
     }
 
-    val versions = listOf(
-        "2024.2.1.12", // Ladybug
-        "2024.1.2.13", // Koala Feature Drop
-        "2024.1.1.13", // Koala
-    )
     pluginVerification {
         ides {
-            versions.onEach { version ->
-                ide(
-                    type = IntelliJPlatformType.AndroidStudio,
-                    version = version,
-                    useInstaller = true
-                )
-            }
+            recommended()
         }
     }
 }

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.2.0
+
+### Fixed
+
+- Connection to OpenAI API
+
 ## 0.1.4
 
 ### Fixed
